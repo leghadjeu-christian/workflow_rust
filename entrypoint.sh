@@ -1,4 +1,4 @@
 #!/bin/sh -l
 
 results=$(echo "$@" | xargs myapp)
-echo "results=$results" >> $GITHUB_OUTPUT
+#echo "results=$results" >> $GITHUB_OUTPUT
