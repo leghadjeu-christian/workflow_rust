@@ -31,3 +31,5 @@ jobs:
       with:
         expected: ${{ steps.expected.outputs.files }}
         actual: ${{ steps.actual.outputs.files }}
+    - name: Comparing
+      run:  echo ${{ steps.actual.outputs.files }}
