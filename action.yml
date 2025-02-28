@@ -17,10 +17,6 @@ runs:
   image: Dockerfile
   args:
   - ${{ inputs.args }}
-  name: My Action
-
-description: A description of your action
-
 inputs:
   param1:
     description: 'First parameter'
