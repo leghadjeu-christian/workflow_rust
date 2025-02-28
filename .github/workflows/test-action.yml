@@ -46,6 +46,8 @@ jobs:
         with:
           push: false
           tags: user/app:latest
+    - name: docker images
+      run: docker images
     - name: Run Rust Action
       uses: ./
       with:
