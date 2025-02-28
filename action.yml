@@ -4,19 +4,11 @@ description: My super Rust application
 branding:  # You can change this
   icon: align-left
   color: blue
-inputs:
-  args:
-    description: Arguments passed to `myapp`
-    required: true
-    default: ''
-outputs:
-  results:
-    description: The results from calling `myapp`
-runs:
-  using: docker
-  image: Dockerfile
-  args:
-  - ${{ inputs.args }}
+##inputs:
+  #args:
+   # description: Arguments passed to `myapp`
+   # required: true
+    #default: ''
 inputs:
   param1:
     description: 'First parameter'
@@ -27,8 +19,16 @@ inputs:
     description: 'Second parameter'
     required: true
     default: 'default_value2'
-
+outputs:
+  results:
+    description: The results from calling `myapp`
 runs:
   using: 'rust'
   main: 'src/main.rs'
+#runs:
+ # using: docker
+ # image: Dockerfile
+  #args:
+  #- ${{ inputs.args }}
+
 
