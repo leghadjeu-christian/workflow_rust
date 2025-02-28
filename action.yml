@@ -27,7 +27,6 @@ runs:
   image: Dockerfile
   args:
   - ${{ inputs.args }}
-  tags: ghcr.io/${{ github.repository }}:latest
 #runs:
  # using: docker
  # image: Dockerfile
