@@ -26,8 +26,8 @@ runs:
   using: docker
   image: Dockerfile
   args:
-  - ${{ inputs.param1 
-  - ${{ inputs.param2 }}
+    - ${{ inputs.param1 
+    - ${{ inputs.param2 }}
 #runs:
  # using: docker
  # image: Dockerfile
