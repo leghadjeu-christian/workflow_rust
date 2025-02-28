@@ -14,6 +14,6 @@ WORKDIR /app
 
 RUN apk add libgcc
 
-COPY --from=build /app/target/release/workflow_rust /app/workflow_rust
+COPY --from=build /app/target/release/myapp /app/myapp
 
-ENTRYPOINT [ "/app/workflow_rust" ]
+ENTRYPOINT [ "/app/myapp" ]
