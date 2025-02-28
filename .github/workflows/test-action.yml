@@ -51,9 +51,9 @@ jobs:
     - name: Run Rust Action
       uses: ./
       with:
-        param1: 'value1'
-        param2: 'value2'
-        tags: ghcr.io/${{ github.repository }}:latest
+        param1: value1
+        param2: value2
+  
 
 
       
