@@ -1,12 +1,19 @@
-FROM rust:1.67 AS build
+FROM rust:alpine AS build
+
+WORKDIR /app
+
 COPY . .
-RUN rustup target add x86_64-unknown-linux-musl
-RUN cargo install --path . --target x86_64-unknown-linux-musl
 
-FROM alpine:3.16.0 AS runtime
-COPY --from=build /usr/local/cargo/bin/myapp /usr/local/bin/myapp
+RUN apk add musl-dev
 
-FROM runtime as action
-COPY entrypoint.sh /entrypoint.sh
+RUN cargo build --release
 
-ENTRYPOINT [ /entrypoint.sh ]
+FROM alpine:latest
+
+WORKDIR /app
+
+RUN apk add libgcc
+
+COPY --from=build /app/target/release/workflow_rust /app/workflow_rust
+
+ENTRYPOINT [ "/app/workflow_rust" ]
