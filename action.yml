@@ -17,3 +17,22 @@ runs:
   image: Dockerfile
   args:
   - ${{ inputs.args }}
+  name: My Action
+
+description: A description of your action
+
+inputs:
+  param1:
+    description: 'First parameter'
+    required: true
+    default: 'default_value1'
+
+  param2:
+    description: 'Second parameter'
+    required: true
+    default: 'default_value2'
+
+runs:
+  using: 'rust'
+  main: 'src/main.rs'
+
