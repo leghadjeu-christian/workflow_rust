@@ -13,12 +13,12 @@ inputs:
   param1:
     description: 'First parameter'
     required: true
-    default: 'default_value1'
+    default: default_value1
 
   param2:
     description: 'Second parameter'
     required: true
-    default: 'default_value2'
+    default: default_value2
 outputs:
   results:
     description: The results from calling `myapp`
@@ -26,7 +26,8 @@ runs:
   using: docker
   image: Dockerfile
   args:
-  - ${{ inputs.args }}
+  - ${{ inputs.param1 
+  - ${{ inputs.param2 }}
 #runs:
  # using: docker
  # image: Dockerfile
