@@ -46,6 +46,11 @@ jobs:
         with:
           push: false
           tags: user/app:latest
+    - name: Run Rust Action
+      uses: ./
+      with:
+        param1: 'value1'
+        param2: 'value2'
 
 
       
