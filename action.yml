@@ -23,8 +23,10 @@ outputs:
   results:
     description: The results from calling `myapp`
 runs:
-  using: 'rust'
-  main: 'src/main.rs'
+  using: docker
+  image: Dockerfile
+  args:
+  - ${{ inputs.args }}
 #runs:
  # using: docker
  # image: Dockerfile
